@@ -18,9 +18,21 @@ const useStyles = makeStyles(theme => ({
 		textDecoration: 'none',
 		color: theme.palette.grey.A700,
 		fontWeight: 500,
-		transition: 'opacity .3s',
-		'&:hover': {
-			opacity: 0.8
+		position: 'relative',
+
+		'&:before': {
+			content: '""',
+			bottom: '-3px',
+			right: 0,
+			position: 'absolute',
+			width: '0%',
+			height: '3px',
+			backgroundColor: 'orange',
+			transition: '.5s'
+		},
+		'&:hover:before': {
+			width: '100%',
+			left: 0
 		}
 	}
 }));
