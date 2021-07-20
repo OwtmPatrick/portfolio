@@ -1,10 +1,13 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-	icon: {
+	iconButton: {
 		[theme.breakpoints.up('md')]: {
 			display: 'none'
 		}
+	},
+	icon: {
+		color: theme.palette.common.white
 	},
 	list: {
 		paddingLeft: '24px',

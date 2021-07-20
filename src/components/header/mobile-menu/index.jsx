@@ -17,10 +17,10 @@ const MobileMenu = ({pathname}) => {
 		<>
 			<IconButton
 				aria-label="menu"
-				className={classes.icon}
+				className={classes.iconButton}
 				onClick={() => setDrawerOpened(!isDrawerOpened)}
 			>
-				<MenuIcon />
+				<MenuIcon className={classes.icon} />
 			</IconButton>
 
 			<Drawer anchor="left" open={isDrawerOpened} onClose={() => setDrawerOpened(false)}>
