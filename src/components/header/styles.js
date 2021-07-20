@@ -38,6 +38,18 @@ const useStyles = makeStyles(theme => ({
 			width: '100%',
 			left: 0
 		}
+	},
+	linkActive: {
+		'&:before': {
+			content: '""',
+			bottom: '-3px',
+			left: 0,
+			right: 0,
+			position: 'absolute',
+			width: '100%',
+			height: '3px',
+			backgroundColor: 'orange'
+		}
 	}
 }));
 
