@@ -1,0 +1,44 @@
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+	root: {
+		backgroundColor: 'transparent'
+	},
+	navBar: {
+		display: 'none',
+		[theme.breakpoints.up('md')]: {
+			display: 'block',
+			width: '100%'
+		}
+	},
+	list: {
+		display: 'flex',
+		justifyContent: 'flex-end'
+	},
+	listItem: {
+		width: 'auto'
+	},
+	link: {
+		position: 'relative',
+		textDecoration: 'none',
+		color: theme.palette.grey.A700,
+		fontWeight: 500,
+
+		'&:before': {
+			content: '""',
+			bottom: '-3px',
+			right: 0,
+			position: 'absolute',
+			width: '0%',
+			height: '3px',
+			backgroundColor: 'orange',
+			transition: '.5s'
+		},
+		'&:hover:before': {
+			width: '100%',
+			left: 0
+		}
+	}
+}));
+
+export default useStyles;
