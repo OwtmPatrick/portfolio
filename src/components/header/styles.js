@@ -2,6 +2,8 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
 	root: {
+		position: 'relative',
+		zIndex: 1,
 		backgroundColor: 'transparent'
 	},
 	navBar: {
@@ -21,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 	link: {
 		position: 'relative',
 		textDecoration: 'none',
-		color: theme.palette.grey.A700,
+		color: theme.palette.common.white,
 		fontWeight: 500,
 
 		'&:before': {
