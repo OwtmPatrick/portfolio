@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Typography} from '@material-ui/core';
 import Particles from 'react-particles-js';
+import clsx from 'clsx';
 import useStyles from './styles';
 import './particles.css';
 import imageSrc from '../../assets/images/developer.png';
@@ -36,11 +37,11 @@ export default () => {
 				justifyContent="center"
 				lg={8}
 			>
-				<div className={classes.imgContainer}>
+				<div className={clsx(classes.imgContainer, 'animate__animated animate__fadeInUp')}>
 					<img src={imageSrc} className={classes.img} />
 				</div>
 
-				<Typography variant="h3" component="h1" align="center" className={classes.text}>
+				<Typography variant="h3" component="h1" align="center" className={clsx(classes.text, 'animate__animated animate__fadeInUp animate__delay-1s')}>
 					Hi, my name is Radik Zangirov and I am frontend developer based at Chelyabinsk, Russia.
 				</Typography>
 			</Grid>
