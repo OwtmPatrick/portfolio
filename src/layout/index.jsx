@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/header';
-import './style.css';
+import Footer from '../components/footer';
+import useStyles from './styles';
 
-const Layout = ({Component}) => (
-	<>
-		<Header />
+const Layout = ({Component}) => {
+	const classes = useStyles();
 
-		<Component />
-	</>
-);
+	return (
+		<section className={classes.layout}>
+			<Header />
+
+			<main className={classes.main}>
+				<Component />
+			</main>
+
+			<Footer />
+		</section>
+	);
+};
 
 Layout.propTypes = {
 	Component: PropTypes.func.isRequired

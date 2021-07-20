@@ -32,10 +32,11 @@ export default () => {
 		<section className={classes.root}>
 			<Grid
 				container
-				className={classes.container}
+				direction="column"
 				alignItems="center"
 				justifyContent="center"
 				lg={8}
+				className={classes.container}
 			>
 				<div className={clsx(classes.imgContainer, 'animate__animated animate__fadeInUp')}>
 					<img src={imageSrc} className={classes.img} />
