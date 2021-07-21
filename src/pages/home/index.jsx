@@ -43,7 +43,7 @@ export default () => {
 				</div>
 
 				<Typography variant="h3" component="h1" align="center" className={clsx(classes.text, 'animate__animated animate__fadeInUp animate__delay-1s')}>
-					Hi, my name is Radik Zangirov and I am frontend developer based at Chelyabinsk, Russia.
+					Hi, my name is Radik Zangirov and I am Javascript developer based at Chelyabinsk, Russia.
 				</Typography>
 			</Grid>
 
