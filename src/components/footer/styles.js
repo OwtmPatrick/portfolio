@@ -9,7 +9,11 @@ const useStyles = makeStyles({
 	},
 	icon: {
 		fontSize: '27px',
-		color: '#000000'
+		color: '#000000',
+		transition: 'opacity .3s',
+		'&:hover': {
+			opacity: 0.6
+		}
 	}
 });
 
