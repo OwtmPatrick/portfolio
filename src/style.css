@@ -2,6 +2,10 @@ html, body {
 	height: 100%;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 #root {
 	height: 100%;
 }
