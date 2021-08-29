@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 		'&:before': {
 			content: '""',
 			bottom: '-3px',
-			right: 0,
+			left: 0,
 			position: 'absolute',
 			width: '0%',
 			height: '3px',
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 		},
 		'&:hover:before': {
 			width: '100%',
-			left: 0
+			right: 0
 		}
 	},
 	linkActive: {
