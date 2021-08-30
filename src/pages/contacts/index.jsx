@@ -1,7 +1,16 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {
-	Typography, Grid, TextField, Button
+	Typography,
+	Grid,
+	TextField,
+	Button,
+	CircularProgress,
+	Dialog,
+	DialogContent,
+	DialogTitle,
+	IconButton
 } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 import clsx from 'clsx';
 import {sendForm} from 'emailjs-com';
 import {useFormik} from 'formik';
@@ -11,6 +20,9 @@ import validationSchema from './validation-schema';
 const {REACT_APP_EMAIL_USER_ID, REACT_APP_EMAIL_SERVICE_ID, REACT_APP_TEMPLATE_ID} = process.env;
 
 export default () => {
+	const [isLoading, setLoading] = useState(false);
+	const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+	const [isFailureModalOpen, setFailureModalOpen] = useState(false);
 	const formRef = useRef(null);
 
 	const formik = useFormik({
@@ -19,27 +31,38 @@ export default () => {
 			message: ''
 		},
 		validationSchema,
-		onSubmit: () => {
-			sendForm(
-				REACT_APP_EMAIL_SERVICE_ID,
-				REACT_APP_TEMPLATE_ID,
-				formRef.current,
-				REACT_APP_EMAIL_USER_ID
-			).then(
-				result => {
-					console.log(result.text);
-				},
-				error => {
-					console.log(error.text);
-				}
-			);
+		onSubmit: async () => {
+			setLoading(true);
+
+			try {
+				await sendForm(
+					REACT_APP_EMAIL_SERVICE_ID,
+					REACT_APP_TEMPLATE_ID,
+					formRef.current,
+					REACT_APP_EMAIL_USER_ID
+				);
+
+				setLoading(false);
+				setSuccessModalOpen(true);
+			} catch (e) {
+				console.log(e.text);
+				setLoading(false);
+				setFailureModalOpen(true);
+			}
 		}
 	});
+
 	const classes = useStyles();
 
 	return (
 		<section className={classes.root}>
-			<form onSubmit={formik.handleSubmit} className={classes.container} ref={formRef}>
+			{isLoading && (
+				<div className={classes.overlay}>
+					<CircularProgress />
+				</div>
+			)}
+
+			<form onSubmit={formik.handleSubmit} className={classes.form} ref={formRef}>
 				<Grid container direction="column" spacing={3} xs={12} sm={6} xl={4}>
 					<Grid item>
 						<Typography
@@ -47,7 +70,7 @@ export default () => {
 							component="h1"
 							className={clsx(classes.title, 'animate__animated animate__fadeInUp')}
 						>
-							Please contact me via email
+							Send a message to me
 						</Typography>
 					</Grid>
 
@@ -92,16 +115,55 @@ export default () => {
 					<Grid item xs={6} md={4}>
 						<Button
 							color="primary"
-							variant="contained"
+							variant="outlined"
 							fullWidth
 							type="submit"
-							className="animate__animated animate__fadeInUp animate__delay-3s"
+							className={clsx(
+								classes.button,
+								'animate__animated animate__fadeInUp animate__delay-3s'
+							)}
 						>
 							Submit
 						</Button>
 					</Grid>
 				</Grid>
 			</form>
+
+			<Dialog open={isSuccessModalOpen} onClose={() => setSuccessModalOpen(false)}>
+				<DialogTitle disableTypography className={classes.dialogTitle}>
+					<IconButton
+						aria-label="close"
+						className={classes.closeButton}
+						onClick={() => setSuccessModalOpen(false)}
+					>
+						<CloseIcon />
+					</IconButton>
+				</DialogTitle>
+
+				<DialogContent className={classes.dialogContent}>
+					<Typography variant="h5" component="h2">
+						Your message was successfully sent
+					</Typography>
+				</DialogContent>
+			</Dialog>
+
+			<Dialog open={isFailureModalOpen} onClose={() => setFailureModalOpen(false)}>
+				<DialogTitle disableTypography className={classes.dialogTitle}>
+					<IconButton
+						aria-label="close"
+						className={classes.closeButton}
+						onClick={() => setFailureModalOpen(false)}
+					>
+						<CloseIcon />
+					</IconButton>
+				</DialogTitle>
+
+				<DialogContent className={classes.dialogContent}>
+					<Typography variant="h5" component="h2">
+						Something went wrong
+					</Typography>
+				</DialogContent>
+			</Dialog>
 		</section>
 	);
 };

@@ -11,7 +11,18 @@ const useStyles = makeStyles(theme => ({
 		},
 		background: 'linear-gradient(135deg, rgb(137 162 222) 0%, rgb(29 43 78) 100%)'
 	},
-	container: {
+	overlay: {
+		position: 'fixed',
+		width: '100vw',
+		height: '100vh',
+		opacity: 0.7,
+		backgroundColor: '#000',
+		zIndex: 100,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	form: {
 		width: '100%',
 		height: '100%',
 		display: 'flex',
@@ -19,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: 'center'
 	},
 	title: {
-		color: '#fff',
+		color: 'rgba(0, 0, 0, 0.4)',
 		textAlign: 'center'
 	},
 	textField: {
@@ -34,6 +45,24 @@ const useStyles = makeStyles(theme => ({
 				borderColor: '#fff'
 			}
 		}
+	},
+	button: {
+		textTransform: 'capitalize',
+		fontWeight: 'normal',
+		color: 'rgba(0, 0, 0, 0.6)',
+		borderColor: 'rgba(0, 0, 0, 0.23)',
+
+		'&:hover': {
+			borderColor: 'rgba(0, 0, 0, 0.87)'
+		}
+	},
+	dialogTitle: {
+		borderBottom: '1px solid grey',
+		display: 'flex',
+		justifyContent: 'flex-end'
+	},
+	dialogContent: {
+		padding: '32px 40px'
 	}
 }));
 
