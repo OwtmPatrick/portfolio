@@ -25,11 +25,11 @@ const useStyles = makeStyles(theme => ({
 
 		'&:before': {
 			content: '""',
-			bottom: '-3px',
+			bottom: '-5px',
 			left: 0,
 			position: 'absolute',
 			width: '0%',
-			height: '3px',
+			height: '2px',
 			backgroundColor: 'orange',
 			transition: '.5s'
 		},
