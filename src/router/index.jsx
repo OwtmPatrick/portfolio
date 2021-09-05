@@ -5,7 +5,7 @@ import routes from './routes';
 import pages from '../pages';
 
 export default () => (
-	<Router>
+	<Router basename={process.env.PUBLIC_URL}>
 		<Switch>
 			{routes.map(({name, url}) => (
 				<Route key={name} path={url} exact>
