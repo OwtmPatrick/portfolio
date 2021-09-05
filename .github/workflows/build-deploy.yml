@@ -3,10 +3,10 @@ name: Build & deploy
 on:
     push:
         branches:
-            - gh-actions-test
+            - master
     pull_request:
         branches:
-            - gh-actions-test
+            - master
 
 jobs:
     build:
@@ -38,7 +38,7 @@ jobs:
         name: Deploy
         needs: build
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/gh-actions-test'
+        if: github.ref == 'refs/heads/master'
 
         steps:
             - name: Download artifact
