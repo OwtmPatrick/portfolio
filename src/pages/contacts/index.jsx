@@ -48,6 +48,7 @@ export default () => {
 				setSuccessModalOpen(true);
 			} catch (e) {
 				console.log(e);
+				console.log(e.text);
 				setLoading(false);
 				setFailureModalOpen(true);
 			}
