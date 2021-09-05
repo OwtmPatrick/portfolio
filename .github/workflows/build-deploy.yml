@@ -22,11 +22,13 @@ jobs:
               with:
                   node-version: 13.x
 
-            - name: Install NPM packages
-              run: npm ci
+            # - name: Install NPM packages
+            #   run: npm ci
 
             - name: Build project
-              run: npm run build
+              run: |
+                npm install
+                npm run-script build
               env:
                 REACT_APP_EMAIL_USER_ID: ${{ secrets.REACT_APP_EMAIL_USER_ID }}
                 REACT_APP_EMAIL_SERVICE_ID: ${{ secrets.REACT_APP_EMAIL_SERVICE_ID }}
