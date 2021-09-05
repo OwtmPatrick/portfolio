@@ -17,6 +17,8 @@ import {useFormik} from 'formik';
 import useStyles from './styles';
 import validationSchema from './validation-schema';
 
+console.log(process.env);
+
 const {REACT_APP_EMAIL_USER_ID, REACT_APP_EMAIL_SERVICE_ID, REACT_APP_TEMPLATE_ID} = process.env;
 
 export default () => {
@@ -45,6 +47,7 @@ export default () => {
 				setLoading(false);
 				setSuccessModalOpen(true);
 			} catch (e) {
+				console.log(e);
 				setLoading(false);
 				setFailureModalOpen(true);
 			}
