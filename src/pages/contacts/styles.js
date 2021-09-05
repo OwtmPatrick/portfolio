@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	dialogTitle: {
-		borderBottom: '1px solid grey',
+		borderBottom: `1px solid ${theme.palette.grey.A700}`,
 		display: 'flex',
 		justifyContent: 'flex-end'
 	},
