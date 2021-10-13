@@ -20,6 +20,7 @@ const Header = ({scrollToTarget, currentSection}) => {
 			header.current.classList.add('header-white');
 			header.current.classList.remove('header-short');
 		} else {
+			header.current.classList.add('header-white');
 			header.current.classList.add('header-short');
 		}
 	};
