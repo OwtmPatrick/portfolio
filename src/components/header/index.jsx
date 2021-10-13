@@ -28,7 +28,7 @@ const Header = ({scrollToTarget, currentSection}) => {
 	useEffect(() => {
 		window.addEventListener('scroll', onScroll);
 
-		return () => window.removeEentListener('scroll', onScroll);
+		return () => window.removeEventListener('scroll', onScroll);
 	}, []);
 
 	return (

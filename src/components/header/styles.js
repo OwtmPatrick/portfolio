@@ -4,7 +4,7 @@ const useStyles = makeStyles(theme => ({
 	root: {
 		position: 'fixed',
 		top: 0,
-		zIndex: 1,
+		zIndex: 100,
 		padding: '8px 0',
 		backgroundColor: 'transparent',
 		fontFamily: "'Mulish', sans-serif",
