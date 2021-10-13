@@ -2,9 +2,21 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		position: 'relative',
+		position: 'fixed',
+		top: 0,
 		zIndex: 1,
-		backgroundColor: 'transparent'
+		padding: '8px 0',
+		backgroundColor: 'transparent',
+		fontFamily: "'Mulish', sans-serif",
+		transition: '.2s',
+
+		'&.header-white': {
+			backgroundColor: theme.palette.common.white
+		},
+
+		'&.header-short': {
+			padding: 0
+		}
 	},
 	navBar: {
 		display: 'none',
@@ -15,7 +27,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	list: {
 		display: 'flex',
-		justifyContent: 'flex-end'
+		justifyContent: 'flex-end',
+		transition: 'padding .2s',
+		padding: '8px 0'
 	},
 	listItem: {
 		width: 'auto'
@@ -24,7 +38,15 @@ const useStyles = makeStyles(theme => ({
 		position: 'relative',
 		textDecoration: 'none',
 		color: theme.palette.common.white,
-		fontWeight: 500,
+		fontWeight: 300,
+
+		'.header-white &': {
+			color: theme.palette.common.black,
+
+			'&:before': {
+				backgroundColor: theme.palette.common.black
+			}
+		},
 
 		'&:before': {
 			content: '""',
@@ -32,10 +54,11 @@ const useStyles = makeStyles(theme => ({
 			left: 0,
 			position: 'absolute',
 			width: '0%',
-			height: '2px',
-			backgroundColor: 'orange',
-			transition: '.5s'
+			height: '1px',
+			backgroundColor: theme.palette.common.white,
+			transition: 'width .5s, background-color .2s'
 		},
+
 		'&:hover:before': {
 			width: '100%',
 			right: 0
@@ -49,8 +72,8 @@ const useStyles = makeStyles(theme => ({
 			right: 0,
 			position: 'absolute',
 			width: '100%',
-			height: '2px',
-			backgroundColor: 'orange'
+			height: '1px',
+			backgroundColor: theme.palette.common.white
 		}
 	}
 }));

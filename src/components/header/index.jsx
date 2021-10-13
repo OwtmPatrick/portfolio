@@ -1,26 +1,57 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Grid, List, ListItem} from '@material-ui/core';
-import {Link, withRouter} from 'react-router-dom';
 import * as PropTypes from 'prop-types';
+import {capitalize} from 'lodash';
 import clsx from 'clsx';
 import useStyles from './styles';
 import MobileMenu from './mobile-menu';
-import routes from '../../router/routes';
+import sections from '../../pages/main/sections';
 
-const Header = ({location: {pathname}}) => {
+const Header = ({scrollToTarget, currentSection}) => {
 	const classes = useStyles();
+	const header = useRef();
+	const onScroll = () => {
+		const scroll = window.scrollY;
+
+		if (scroll === 0) {
+			header.current.classList.remove('header-white');
+			header.current.classList.remove('header-short');
+		} else if (scroll > 0 && scroll < 100) {
+			header.current.classList.add('header-white');
+			header.current.classList.remove('header-short');
+		} else {
+			header.current.classList.add('header-short');
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEentListener('scroll', onScroll);
+	}, []);
 
 	return (
-		<Grid container className={classes.root}>
-			<MobileMenu pathname={pathname} />
+		<Grid container className={classes.root} ref={header}>
+			<MobileMenu currentSection={currentSection} scrollToTarget={scrollToTarget} />
 
 			<Grid className={classes.navBar}>
 				<List className={classes.list}>
-					{routes.map(({name, url}) => (
+					{sections.map(({name}) => (
 						<ListItem key={name} className={classes.listItem}>
-							<Link to={url} className={pathname === url ? clsx(classes.link, classes.linkActive) : classes.link}>
-								{name}
-							</Link>
+							<a
+								href=""
+								className={
+									name === currentSection
+										? clsx(classes.link, classes.linkActive)
+										: classes.link
+								}
+								onClick={e => {
+									e.preventDefault();
+									scrollToTarget(name);
+								}}
+							>
+								{capitalize(name)}
+							</a>
 						</ListItem>
 					))}
 				</List>
@@ -30,7 +61,8 @@ const Header = ({location: {pathname}}) => {
 };
 
 Header.propTypes = {
-	location: PropTypes.object.isRequired
+	currentSection: PropTypes.string,
+	scrollToTarget: PropTypes.func.isRequired
 };
 
-export default withRouter(Header);
+export default Header;
