@@ -7,7 +7,12 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	icon: {
-		color: theme.palette.common.white
+		color: theme.palette.common.white,
+		transition: '.2s',
+
+		'.header-white &': {
+			color: theme.palette.common.black
+		}
 	},
 	list: {
 		paddingLeft: '24px',
@@ -22,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 		color: theme.palette.grey.A700,
 		fontWeight: 500,
 		position: 'relative',
+		fontFamily: "'Mulish', sans-serif",
 
 		'&:before': {
 			content: '""',
@@ -29,8 +35,8 @@ const useStyles = makeStyles(theme => ({
 			left: 0,
 			position: 'absolute',
 			width: '0%',
-			height: '2px',
-			backgroundColor: 'orange',
+			height: '1px',
+			backgroundColor: theme.palette.common.black,
 			transition: '.5s'
 		},
 		'&:hover:before': {
@@ -46,8 +52,8 @@ const useStyles = makeStyles(theme => ({
 			right: 0,
 			position: 'absolute',
 			width: '100%',
-			height: '3px',
-			backgroundColor: 'orange'
+			height: '1px',
+			backgroundColor: theme.palette.common.black
 		}
 	}
 }));

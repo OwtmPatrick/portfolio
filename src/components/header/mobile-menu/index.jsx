@@ -4,14 +4,18 @@ import {
 } from '@material-ui/core';
 import * as PropTypes from 'prop-types';
 import clsx from 'clsx';
-import {Link} from 'react-router-dom';
+import {capitalize} from 'lodash';
 import MenuIcon from '@material-ui/icons/Menu';
+import sections from '../../../pages/main/sections';
 import useStyles from './styles';
-import routes from '../../../router/routes';
 
-const MobileMenu = ({pathname}) => {
+const MobileMenu = ({currentSection, scrollToTarget}) => {
 	const [isDrawerOpened, setDrawerOpened] = useState(false);
 	const classes = useStyles();
+	const scrollToSection = (e, name) => {
+		e.preventDefault();
+		scrollToTarget(name);
+	};
 
 	return (
 		<>
@@ -25,14 +29,19 @@ const MobileMenu = ({pathname}) => {
 
 			<Drawer anchor="left" open={isDrawerOpened} onClose={() => setDrawerOpened(false)}>
 				<List className={classes.list}>
-					{routes.map(({name, url}) => (
+					{sections.map(({name}) => (
 						<ListItem key={name} className={classes.listItem}>
-							<Link
-								to={url}
-								className={pathname === url ? clsx(classes.link, classes.linkActive) : classes.link}
+							<a
+								href=""
+								className={
+									name === currentSection
+										? clsx(classes.link, classes.linkActive)
+										: classes.link
+								}
+								onClick={e => scrollToSection(e, name)}
 							>
-								{name}
-							</Link>
+								{capitalize(name)}
+							</a>
 						</ListItem>
 					))}
 				</List>
@@ -42,8 +51,8 @@ const MobileMenu = ({pathname}) => {
 };
 
 MobileMenu.propTypes = {
-	pathname: PropTypes.string.isRequired
+	currentSection: PropTypes.string,
+	scrollToTarget: PropTypes.func.isRequired
 };
 
 export default MobileMenu;
-
