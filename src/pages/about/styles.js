@@ -4,11 +4,11 @@ import backgroundImage from '../../assets/images/tools.jpg';
 const useStyles = makeStyles(theme => ({
 	root: {
 		position: 'relative',
-		height: 'calc(100% + 48px + 47px)',
-		marginTop: '-48px',
+		// height: 'calc(100% + 48px + 47px)',
+		// marginTop: '-48px',
 		[theme.breakpoints.up('md')]: {
-			height: 'calc(100% + 53px + 47px)',
-			marginTop: '-53px'
+			// height: 'calc(100% + 53px + 47px)',
+			// marginTop: '-53px'
 		},
 		backgroundImage: `url(${backgroundImage})`,
 		backgroundSize: 'cover',

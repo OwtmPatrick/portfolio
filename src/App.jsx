@@ -3,13 +3,12 @@ import {init} from 'emailjs-com';
 import 'animate.css/animate.css';
 import './style.css';
 import './animate.css';
-
-import Router from './router';
+import Main from './pages/main';
 
 function App() {
 	init(process.env.REACT_APP_EMAIL_USER_ID);
 
-	return <Router />;
+	return <Main />;
 }
 
 export default App;

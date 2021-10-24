@@ -1,46 +1,71 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-	root: {
-		height: 'calc(100% + 48px + 47px)',
-		marginTop: '-48px',
-		[theme.breakpoints.up('md')]: {
-			height: 'calc(100% + 53px + 47px)',
-			marginTop: '-53px'
-		},
-		background: 'linear-gradient(135deg, rgb(137 162 222) 0%, rgb(29 43 78) 100%)'
-	},
 	container: {
-		height: '100%',
+		position: 'relative',
+		minHeight: '100vh',
+		padding: '200px 0',
 		paddingLeft: '12px',
 		paddingRight: '12px',
-		[theme.breakpoints.up('lg')]: {
-			margin: '0 auto'
+		fontFamily: "'Mulish', sans-serif",
+		background: theme.palette.primary.main,
+		[theme.breakpoints.up('md')]: {
+			flexFlow: 'row'
+		},
+
+		'&:before': {
+			[theme.breakpoints.up('md')]: {
+				content: "''",
+				position: 'absolute',
+				top: 0,
+				right: 0,
+				width: '17%',
+				height: '100%',
+				backgroundColor: theme.palette.common.white
+			},
+			[theme.breakpoints.up('xl')]: {
+				width: '25%'
+			}
+		}
+	},
+	textContainer: {
+		[theme.breakpoints.up('md')]: {
+			marginRight: 50
+		}
+	},
+	intro: {
+		fontFamily: "'Mulish', sans-serif",
+		color: theme.palette.common.white,
+		fontSize: 48,
+		fontWeight: 700,
+		textAlign: 'center',
+		[theme.breakpoints.up('md')]: {
+			textAlign: 'left'
+		}
+	},
+	text: {
+		marginTop: 20,
+		marginBottom: 60,
+		fontSize: 22,
+		fontWeight: 300,
+		fontFamily: "'Mulish', sans-serif",
+		color: theme.palette.common.white,
+		[theme.breakpoints.up('md')]: {
+			textAlign: 'left'
 		}
 	},
 	imgContainer: {
 		position: 'relative',
 		zIndex: 1,
-		width: '200px',
-		height: '200px',
-		borderRadius: '50%',
-		overflow: 'hidden',
-		[theme.breakpoints.up('lg')]: {
-			width: '250px',
-			height: '250px',
-			marginBottom: '25px'
-		}
+		width: '100%',
+		maxWidth: '500px',
+		maxHeight: '500px',
+		overflow: 'hidden'
 	},
 	img: {
-		width: '200px',
-		height: '200px',
-		[theme.breakpoints.up('lg')]: {
-			width: '250px',
-			height: '250px'
-		}
-	},
-	text: {
-		color: theme.palette.common.white
+		width: '100%',
+		height: '100%',
+		objectFit: 'contain'
 	}
 }));
 
