@@ -1,7 +1,9 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import clsx from 'clsx';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import useStyles from './styles';
+import icons from './icons';
 
 const Project = ({
 	img, title, github, demo, technoloigies
@@ -10,18 +12,27 @@ const Project = ({
 
 	return (
 		<div style={{backgroundImage: `url(${img})`}} className={classes.container}>
-			<div className={clsx(classes.info, 'info')}>
-				<div className={classes.title}>{title}</div>
+			<div className={clsx(classes.infoContainer, 'info-container')}>
+				<div className={classes.info}>
+					<div className={classes.title}>{title}</div>
 
-				<div>
-					<a href={github}>github</a>
-					<a href={demo}>demo</a>
-				</div>
+					<div>
+						{technoloigies.map(({type, name}) => (type === 'fontAwesome' ? (
+							<FontAwesomeIcon icon={icons[name]} className={classes.icon} />
+						) : (
+							<div key={name}>{icons[name]()}</div>
+						)))}
+					</div>
 
-				<div>
-					{technoloigies.map(t => (
-						<div key={t}>{t}</div>
-					))}
+					<div className={classes.linksWrapper}>
+						<a href={github} className={classes.link}>
+							Github
+						</a>
+
+						<a href={demo} className={clsx(classes.link, classes.demo)}>
+							Demo
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

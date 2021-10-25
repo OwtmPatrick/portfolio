@@ -17,7 +17,7 @@ export default () => {
 		>
 			<Grid item className={classes.content} lg={10}>
 				<Grid item className={classes.textContainer}>
-					<Typography variant="h3" component="h2" className={classes.intro}>
+					<Typography variant="h2" component="h1" className={classes.intro}>
 						Introduction
 					</Typography>
 

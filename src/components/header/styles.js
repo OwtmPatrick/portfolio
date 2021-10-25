@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 		marginRight: '40px',
 		padding: '4px 5px',
 		fontSize: '24px',
-		border: '2px solid white',
+		border: '5px solid white',
 		color: 'white',
 		letterSpacing: '1px',
 		transition: '.2s',

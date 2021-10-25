@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid} from '@material-ui/core';
+import {Grid, Typography} from '@material-ui/core';
 import useStyles from './styles';
 import Project from '../../components/project';
 import projects from './projects';
@@ -15,11 +15,17 @@ export default () => {
 			justifyContent="center"
 			className={classes.container}
 		>
-			{projects.map(project => (
-				<Grid item className={classes.project}>
-					<Project {...project} />
-				</Grid>
-			))}
+			<Typography variant="h2" component="h2" className={classes.title}>
+				Projects
+			</Typography>
+
+			<Grid lg={10} className={classes.projectsContainer}>
+				{projects.map(project => (
+					<Grid item className={classes.project}>
+						<Project {...project} />
+					</Grid>
+				))}
+			</Grid>
 		</Grid>
 	);
 };
