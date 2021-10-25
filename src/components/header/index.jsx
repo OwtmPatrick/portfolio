@@ -35,27 +35,42 @@ const Header = ({scrollToTarget, currentSection}) => {
 		<Grid container className={classes.root} ref={header}>
 			<MobileMenu currentSection={currentSection} scrollToTarget={scrollToTarget} />
 
-			<Grid className={classes.navBar}>
-				<List className={classes.list}>
-					{sections.map(({name}) => (
-						<ListItem key={name} className={classes.listItem}>
-							<a
-								href=""
-								className={
-									name === currentSection
-										? clsx(classes.link, classes.linkActive)
-										: classes.link
-								}
-								onClick={e => {
-									e.preventDefault();
-									scrollToTarget(name);
-								}}
-							>
-								{capitalize(name)}
-							</a>
-						</ListItem>
-					))}
-				</List>
+			<Grid container direction="row" alignItems="center" className={classes.navBarWrapper} lg={10}>
+				<Grid className={classes.navBar}>
+					<div className={classes.logo}>RZ</div>
+
+					<List className={classes.list}>
+						{sections.map(({name}) => (
+							<ListItem key={name} className={classes.listItem}>
+								<a
+									href=""
+									className={
+										name === currentSection
+											? clsx(classes.link, classes.linkActive)
+											: classes.link
+									}
+									onClick={e => {
+										e.preventDefault();
+										scrollToTarget(name);
+									}}
+								>
+									{capitalize(name)}
+								</a>
+							</ListItem>
+						))}
+					</List>
+				</Grid>
+
+				<a
+					href="/"
+					onClick={e => {
+						e.preventDefault();
+						scrollToTarget('contacts');
+					}}
+					className={classes.contacts}
+				>
+					Contacts
+				</a>
 			</Grid>
 		</Grid>
 	);

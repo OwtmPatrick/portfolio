@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
 		position: 'fixed',
 		top: 0,
 		zIndex: 100,
-		padding: '8px 0',
+		padding: '16px 0',
 		backgroundColor: 'transparent',
 		fontFamily: "'Mulish', sans-serif",
 		transition: '.2s',
@@ -15,13 +15,37 @@ const useStyles = makeStyles(theme => ({
 		},
 
 		'&.header-short': {
-			padding: 0
+			padding: '8px 0'
+		}
+	},
+	logo: {
+		marginRight: '40px',
+		padding: '4px 5px',
+		fontSize: '24px',
+		border: '2px solid white',
+		color: 'white',
+		letterSpacing: '1px',
+		transition: '.2s',
+
+		'.header-white &': {
+			color: theme.palette.common.black,
+			borderColor: theme.palette.common.black
+		}
+	},
+	navBarWrapper: {
+		[theme.breakpoints.up('md')]: {
+			flexWrap: 'nowrap',
+			padding: '0 12px'
+		},
+		[theme.breakpoints.up('lg')]: {
+			margin: '0 auto'
 		}
 	},
 	navBar: {
 		display: 'none',
 		[theme.breakpoints.up('md')]: {
-			display: 'block',
+			display: 'flex',
+			alignItems: 'center',
 			width: '100%'
 		}
 	},
@@ -74,6 +98,33 @@ const useStyles = makeStyles(theme => ({
 			width: '100%',
 			height: '1px',
 			backgroundColor: theme.palette.common.white
+		}
+	},
+	contacts: {
+		display: 'none',
+
+		[theme.breakpoints.up('md')]: {
+			position: 'relative',
+			display: 'block',
+			color: theme.palette.primary.main,
+			fontWeight: 300,
+			textDecoration: 'none',
+
+			'&:before': {
+				content: '""',
+				bottom: '-5px',
+				left: 0,
+				position: 'absolute',
+				width: '0%',
+				height: '1px',
+				backgroundColor: theme.palette.primary.main,
+				transition: 'width .5s'
+			},
+
+			'&:hover:before': {
+				width: '100%',
+				right: 0
+			}
 		}
 	}
 }));
