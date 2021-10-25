@@ -4,12 +4,6 @@ import backgroundImage from '../../assets/images/tools.jpg';
 const useStyles = makeStyles(theme => ({
 	root: {
 		position: 'relative',
-		// height: 'calc(100% + 48px + 47px)',
-		// marginTop: '-48px',
-		[theme.breakpoints.up('md')]: {
-			// height: 'calc(100% + 53px + 47px)',
-			// marginTop: '-53px'
-		},
 		backgroundImage: `url(${backgroundImage})`,
 		backgroundSize: 'cover',
 		color: theme.palette.common.white,
@@ -25,8 +19,7 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	container: {
-		padding: '0 12px',
-		paddingTop: '200px',
+		padding: '200px 12px',
 		position: 'relative'
 	},
 	textContainer: {

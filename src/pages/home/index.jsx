@@ -15,26 +15,28 @@ export default () => {
 			justifyContent="center"
 			className={classes.container}
 		>
-			<Grid item className={classes.textContainer}>
-				<Typography variant="h3" component="h2" className={classes.intro}>
-					Introduction
-				</Typography>
+			<Grid item className={classes.content} lg={10}>
+				<Grid item className={classes.textContainer}>
+					<Typography variant="h3" component="h2" className={classes.intro}>
+						Introduction
+					</Typography>
 
-				<Typography
-					variant="body2"
-					component="p"
-					align="center"
-					className={clsx(classes.text)}
-				>
-					Hi, my name is Radik Zangirov and I am Javascript developer based at
-					Chelyabinsk, Russia.
-				</Typography>
-			</Grid>
+					<Typography
+						variant="body2"
+						component="p"
+						align="center"
+						className={clsx(classes.text)}
+					>
+						Hi, my name is Radik Zangirov and I am Javascript developer based at
+						Chelyabinsk, Russia.
+					</Typography>
+				</Grid>
 
-			<Grid item>
-				<div className={clsx(classes.imgContainer)}>
-					<img src={imageSrc} className={classes.img} />
-				</div>
+				<Grid item>
+					<div className={clsx(classes.imgContainer)}>
+						<img src={imageSrc} className={classes.img} />
+					</div>
+				</Grid>
 			</Grid>
 		</Grid>
 	);

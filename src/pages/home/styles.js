@@ -9,9 +9,6 @@ const useStyles = makeStyles(theme => ({
 		paddingRight: '12px',
 		fontFamily: "'Mulish', sans-serif",
 		background: theme.palette.primary.main,
-		[theme.breakpoints.up('md')]: {
-			flexFlow: 'row'
-		},
 
 		'&:before': {
 			[theme.breakpoints.up('md')]: {
@@ -26,6 +23,15 @@ const useStyles = makeStyles(theme => ({
 			[theme.breakpoints.up('xl')]: {
 				width: '25%'
 			}
+		}
+	},
+	content: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		[theme.breakpoints.up('md')]: {
+			flexDirection: 'row',
+			alignItems: 'flex-start'
 		}
 	},
 	textContainer: {
