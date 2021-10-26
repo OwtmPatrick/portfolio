@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '48px',
 		fontWeight: 700,
 		color: theme.palette.primary.main,
-		margin: '30px 0'
+		margin: '60px 0'
 	},
 	projectsContainer: {
 		width: '100%',
