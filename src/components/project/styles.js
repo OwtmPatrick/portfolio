@@ -4,7 +4,6 @@ const useStyles = makeStyles(theme => ({
 	container: {
 		position: 'relative',
 		overflow: 'hidden',
-		margin: '12px 0',
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: '100%',
 		transition: '.3s',
@@ -13,6 +12,16 @@ const useStyles = makeStyles(theme => ({
 			content: '""',
 			display: 'block',
 			paddingTop: 'calc(1 / 300 * 200 * 100%)'
+		},
+		'&:first-child': {
+			[theme.breakpoints.up('md')]: {
+				height: '100%'
+			},
+			'&:before': {
+				[theme.breakpoints.up('md')]: {
+					paddingTop: 'calc(1 / 300 * 196 * 100%)'
+				}
+			}
 		},
 		'&:hover': {
 			backgroundSize: '105%'

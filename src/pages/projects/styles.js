@@ -2,7 +2,7 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
 	container: {
-		padding: '30px 0',
+		padding: '60px 0',
 		paddingLeft: '12px',
 		paddingRight: '12px',
 		fontFamily: "'Mulish', sans-serif"
@@ -19,14 +19,32 @@ const useStyles = makeStyles(theme => ({
 		[theme.breakpoints.up('md')]: {
 			display: 'flex',
 			flexFlow: 'row wrap',
+			width: 'calc(100% + 24px)',
 			margin: '-12px'
+		}
+	},
+	projectContainer: {
+		width: '100%',
+		[theme.breakpoints.up('md')]: {
+			boxSizing: 'border-box',
+			padding: '12px'
 		}
 	},
 	project: {
 		width: '100%',
+		marginTop: '12px',
 		[theme.breakpoints.up('md')]: {
-			width: 'calc(50% - 24px)',
-			margin: '12px'
+			marginTop: 0
+		},
+		'&.first': {
+			[theme.breakpoints.up('md')]: {
+				height: '100%'
+			}
+		},
+		'&.second': {
+			[theme.breakpoints.up('md')]: {
+				marginBottom: '24px'
+			}
 		}
 	}
 }));

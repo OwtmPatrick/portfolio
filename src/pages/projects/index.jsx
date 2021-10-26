@@ -1,5 +1,6 @@
 import React from 'react';
 import {Grid, Typography} from '@material-ui/core';
+import clsx from 'clsx';
 import useStyles from './styles';
 import Project from '../../components/project';
 import projects from './projects';
@@ -20,11 +21,21 @@ export default () => {
 			</Typography>
 
 			<Grid lg={10} className={classes.projectsContainer}>
-				{projects.map(project => (
-					<Grid item className={classes.project}>
-						<Project {...project} />
+				<Grid lg={8} className={classes.projectContainer}>
+					<Grid item className={clsx(classes.project, 'first')}>
+						<Project {...projects[0]} />
 					</Grid>
-				))}
+				</Grid>
+
+				<Grid lg={4} className={classes.projectContainer}>
+					<Grid item className={clsx(classes.project, 'second')}>
+						<Project {...projects[1]} />
+					</Grid>
+
+					<Grid item className={classes.project}>
+						<Project {...projects[2]} />
+					</Grid>
+				</Grid>
 			</Grid>
 		</Grid>
 	);
