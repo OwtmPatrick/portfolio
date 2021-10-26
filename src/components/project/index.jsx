@@ -16,11 +16,11 @@ const Project = ({
 				<div className={classes.info}>
 					<div className={classes.title}>{title}</div>
 
-					<div>
+					<div className={classes.technologies}>
 						{technoloigies.map(({type, name}) => (type === 'fontAwesome' ? (
 							<FontAwesomeIcon icon={icons[name]} className={classes.icon} />
 						) : (
-							<div key={name}>{icons[name]()}</div>
+							<div key={name} className={classes.customIcon}>{icons[name]()}</div>
 						)))}
 					</div>
 

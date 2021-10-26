@@ -8,20 +8,20 @@ export default [
 		title: 'Calculator',
 		github: 'https://github.com/OwtmPatrick/calc-ts',
 		demo: 'https://owtmpatrick.github.io/calc-ts/',
-		technoloigies: [{name: 'javascript', type: 'fontAwesome'}]
+		technoloigies: [{name: 'typescript', type: 'custom'}]
 	},
 	{
 		img: catAndPerson,
 		title: 'Cat and person detection',
 		github: 'https://github.com/OwtmPatrick/person-and-cat-detection',
 		demo: 'https://owtmpatrick.github.io/person-and-cat-detection/',
-		technoloigies: [{name: 'javascript', type: 'fontAwesome'}]
+		technoloigies: [{name: 'javascript', type: 'fontAwesome'}, {name: 'tensorflow', type: 'custom'}]
 	},
 	{
 		img: science,
 		title: 'Science',
 		github: 'https://github.com/OwtmPatrick/science',
 		demo: 'https://owtmpatrick.github.io/science/',
-		technoloigies: [{name: 'react', type: 'fontAwesome'}]
+		technoloigies: [{name: 'react', type: 'fontAwesome'}, {name: 'redux', type: 'custom'}]
 	}
 ];

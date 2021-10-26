@@ -54,8 +54,23 @@ const useStyles = makeStyles(theme => ({
 		marginBottom: '15px',
 		fontSize: '24px'
 	},
+	technologies: {
+		display: 'flex',
+		margin: '0 -8px'
+	},
 	icon: {
-		fontSize: '30px'
+		fontSize: '30px',
+		margin: '0 8px'
+	},
+	customIcon: {
+		width: '30px',
+		height: '30px',
+		margin: '0 8px',
+
+		'& svg': {
+			width: '30px',
+			height: '30px'
+		}
 	},
 	linksWrapper: {
 		display: 'flex',
