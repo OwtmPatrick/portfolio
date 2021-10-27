@@ -40,7 +40,7 @@ const Header = ({scrollToTarget, currentSection}) => {
 					<div className={classes.logo}>RZ</div>
 
 					<List className={classes.list}>
-						{sections.map(({name}) => (
+						{sections.filter(s => s.name !== 'contacts').map(({name}) => (
 							<ListItem key={name} className={classes.listItem}>
 								<a
 									href=""
