@@ -11,7 +11,8 @@ const useStyles = makeStyles(theme => ({
 		transition: '.2s',
 
 		'&.header-white': {
-			backgroundColor: theme.palette.common.white
+			backgroundColor: theme.palette.common.white,
+			boxShadow: '4px 0 20px -5px rgb(0 0 0 / 20%)'
 		},
 
 		'&.header-short': {
