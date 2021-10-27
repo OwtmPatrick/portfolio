@@ -53,8 +53,8 @@ export default () => {
 		<main>
 			<Header scrollToTarget={scrollToTarget} currentSection={currentSection} />
 
-			{sections.map(item => (
-				<section ref={sectionsRefs[item.name]}>{item.component()}</section>
+			{sections.map((item, index) => (
+				<section key={index} ref={sectionsRefs[item.name]}>{item.component()}</section>
 			))}
 		</main>
 	);

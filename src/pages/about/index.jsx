@@ -21,8 +21,8 @@ export default () => {
 				</Grid>
 
 				<Grid item lg={10} className={classes.textContainer}>
-					<Typography variant="h4" component="h2" className="animate__animated animate__fadeInRight animate__delay-1s">
-						Fullstack JS developer who is interested in Machine learning
+					<Typography variant="h4" component="h2" className={clsx(classes.subTitle, 'animate__animated animate__fadeInRight animate__delay-1s')}>
+						Javascript developer who is interested in Machine learning
 					</Typography>
 				</Grid>
 

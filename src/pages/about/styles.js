@@ -27,7 +27,12 @@ const useStyles = makeStyles(theme => ({
 		marginBottom: '20px'
 	},
 	title: {
-		fontWeight: 500
+		fontWeight: 500,
+		fontSize: '48px',
+		fontFamily: "'Mulish', sans-serif"
+	},
+	subTitle: {
+		fontFamily: "'Mulish', sans-serif"
 	},
 	point: {
 		position: 'relative',
@@ -36,15 +41,13 @@ const useStyles = makeStyles(theme => ({
 	},
 	pointIcon: {
 		color: 'orange',
-
-		[theme.breakpoints.up('lg')]: {
-			position: 'absolute',
-			left: '-30px',
-			top: '13px'
-		}
+		position: 'absolute',
+		left: '-30px',
+		top: '13px'
 	},
 	pointText: {
-		fontSize: '22px'
+		fontSize: '22px',
+		fontFamily: "'Mulish', sans-serif"
 	}
 }));
 

@@ -18,7 +18,7 @@ const Project = ({
 
 					<div className={classes.technologies}>
 						{technoloigies.map(({type, name}) => (type === 'fontAwesome' ? (
-							<FontAwesomeIcon icon={icons[name]} className={classes.icon} />
+							<FontAwesomeIcon key={name} icon={icons[name]} className={classes.icon} />
 						) : (
 							<div key={name} className={classes.customIcon}>{icons[name]()}</div>
 						)))}
