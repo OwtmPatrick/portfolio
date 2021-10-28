@@ -159,8 +159,8 @@ export default () => {
 				</DialogTitle>
 
 				<DialogContent className={classes.dialogContent}>
-					<Typography variant="h5" component="h2">
-						Your message was successfully sent
+					<Typography variant="h5" component="h2" className={classes.dialogText}>
+						Your message was successfully sent, I&apos;ll answer you soon
 					</Typography>
 				</DialogContent>
 			</Dialog>
@@ -177,8 +177,8 @@ export default () => {
 				</DialogTitle>
 
 				<DialogContent className={classes.dialogContent}>
-					<Typography variant="h5" component="h2">
-						Something went wrong
+					<Typography variant="h5" component="h2" className={classes.dialogText}>
+						Something went wrong, please try again later
 					</Typography>
 				</DialogContent>
 			</Dialog>

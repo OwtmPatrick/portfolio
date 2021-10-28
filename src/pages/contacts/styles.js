@@ -5,6 +5,21 @@ const useStyles = makeStyles(theme => ({
 		padding: '0 12px',
 		paddingBottom: '100px'
 	},
+	overlay: {
+		position: 'fixed',
+		top: 0,
+		right: 0,
+		bottom: 0,
+		left: 0,
+		width: '100vw',
+		height: '100vh',
+		opacity: 0.7,
+		backgroundColor: '#000',
+		zIndex: 100,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
 	form: {
 		display: 'flex',
 		alignItems: 'center',
@@ -42,12 +57,30 @@ const useStyles = makeStyles(theme => ({
 		textTransform: 'capitalize'
 	},
 	dialogTitle: {
-		borderBottom: `1px solid ${theme.palette.grey.A700}`,
+		// borderBottom: `1px solid ${theme.palette.grey.A100}`,
+		position: 'relative',
 		display: 'flex',
-		justifyContent: 'flex-end'
+		justifyContent: 'flex-end',
+		padding: '8px 16px',
+
+		'&:before': {
+			content: '""',
+			position: 'absolute',
+			bottom: 0,
+			left: '30px',
+			width: 'calc(100% - 60px)',
+			height: '1px',
+			backgroundColor: theme.palette.grey.A100
+		}
+	},
+	dialogText: {
+		fontFamily: "'Mulish', sans-serif"
+	},
+	closeButton: {
+		padding: '8px'
 	},
 	dialogContent: {
-		padding: '32px 40px'
+		padding: '15px 30px'
 	}
 }));
 
