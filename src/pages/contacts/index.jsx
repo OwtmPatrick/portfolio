@@ -11,11 +11,13 @@ import {
 	IconButton
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import {sendForm} from 'emailjs-com';
 import {useFormik} from 'formik';
 import useStyles from './styles';
 import validationSchema from './validation-schema';
+import icons from './icons';
 
 const {REACT_APP_EMAIL_USER_ID, REACT_APP_EMAIL_SERVICE_ID, REACT_APP_TEMPLATE_ID} = process.env;
 
@@ -64,85 +66,107 @@ export default () => {
 			)}
 
 			<form onSubmit={formik.handleSubmit} className={classes.form} ref={formRef}>
-				<Grid container direction="column" spacing={2} lg={6}>
+				<Grid container direction="column" lg={6}>
 					<Grid item>
 						<Typography variant="h2" component="h2" className={clsx(classes.title)}>
 							Send me a message
 						</Typography>
 					</Grid>
 
-					<Grid item className={clsx(classes.item, classes.names)}>
-						<Grid item lg={6} className={clsx(classes.item, classes.firstName)}>
-							<TextField
-								fullWidth
-								variant="outlined"
-								name="firstName"
-								label="First name"
-								id="firstName"
-								className={clsx(classes.textField)}
-								value={formik.values.firstName}
-								onChange={formik.handleChange}
-								error={formik.touched.firstName && Boolean(formik.errors.firstName)}
-								helperText={formik.touched.firstName && formik.errors.firstName}
-							/>
+					<Grid container direction="column" spacing={2} className={classes.formInner}>
+						<Grid item className={classes.fields}>
+							<Grid item className={clsx(classes.item, classes.names)}>
+								<Grid item lg={6} className={clsx(classes.item, classes.firstName)}>
+									<TextField
+										fullWidth
+										variant="outlined"
+										name="firstName"
+										label="First name"
+										id="firstName"
+										className={clsx(classes.textField)}
+										value={formik.values.firstName}
+										onChange={formik.handleChange}
+										error={
+											formik.touched.firstName
+											&& Boolean(formik.errors.firstName)
+										}
+										helperText={
+											formik.touched.firstName && formik.errors.firstName
+										}
+									/>
+								</Grid>
+
+								<Grid item lg={6} className={classes.item}>
+									<TextField
+										fullWidth
+										variant="outlined"
+										name="lastName"
+										label="Last name"
+										id="lastName"
+										className={clsx(classes.textField)}
+										value={formik.values.lastName}
+										onChange={formik.handleChange}
+										error={
+											formik.touched.lastName
+											&& Boolean(formik.errors.lastName)
+										}
+										helperText={
+											formik.touched.lastName && formik.errors.lastName
+										}
+									/>
+								</Grid>
+							</Grid>
+
+							<Grid item className={classes.item}>
+								<TextField
+									fullWidth
+									variant="outlined"
+									name="subject"
+									label="Subject"
+									id="subject"
+									className={clsx(classes.textField)}
+									value={formik.values.subject}
+									onChange={formik.handleChange}
+								/>
+							</Grid>
+
+							<Grid item className={classes.item}>
+								<TextField
+									fullWidth
+									variant="outlined"
+									multiline
+									rows={10}
+									name="message"
+									label="Message"
+									id="message"
+									className={clsx(classes.textField)}
+									value={formik.values.message}
+									onChange={formik.handleChange}
+									error={formik.touched.message && Boolean(formik.errors.message)}
+									helperText={formik.touched.message && formik.errors.message}
+								/>
+							</Grid>
+
+							<Grid item xs={6} md={4} className={classes.item}>
+								<Button
+									color="primary"
+									variant="outlined"
+									fullWidth
+									type="submit"
+									className={clsx(classes.button)}
+								>
+									Send
+								</Button>
+							</Grid>
 						</Grid>
 
-						<Grid item lg={6} className={classes.item}>
-							<TextField
-								fullWidth
-								variant="outlined"
-								name="lastName"
-								label="Last name"
-								id="lastName"
-								className={clsx(classes.textField)}
-								value={formik.values.lastName}
-								onChange={formik.handleChange}
-								error={formik.touched.lastName && Boolean(formik.errors.lastName)}
-								helperText={formik.touched.lastName && formik.errors.lastName}
-							/>
+						<Grid item className={classes.icons}>
+							{icons.map(({icon, link}) => (
+								<a key={link} href={link} className={classes.link}>
+									<FontAwesomeIcon icon={icon} className={classes.icon} />
+								</a>
+							))}
 						</Grid>
-					</Grid>
-
-					<Grid item className={classes.item}>
-						<TextField
-							fullWidth
-							variant="outlined"
-							name="subject"
-							label="Subject"
-							id="subject"
-							className={clsx(classes.textField)}
-							value={formik.values.subject}
-							onChange={formik.handleChange}
-						/>
-					</Grid>
-
-					<Grid item className={classes.item}>
-						<TextField
-							fullWidth
-							variant="outlined"
-							multiline
-							rows={10}
-							name="message"
-							label="Message"
-							id="message"
-							className={clsx(classes.textField)}
-							value={formik.values.message}
-							onChange={formik.handleChange}
-							error={formik.touched.message && Boolean(formik.errors.message)}
-							helperText={formik.touched.message && formik.errors.message}
-						/>
-					</Grid>
-
-					<Grid item xs={6} md={4} className={classes.item}>
-						<Button
-							color="primary"
-							variant="outlined"
-							fullWidth
-							type="submit"
-							className={clsx(classes.button)}
-						>
-							Send
-						</Button>
 					</Grid>
 				</Grid>
 			</form>
