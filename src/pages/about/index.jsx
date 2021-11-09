@@ -15,7 +15,7 @@ export default () => {
 		<section className={classes.root}>
 			<Grid container direction="column" alignItems="center" className={classes.container}>
 				<Grid item lg={10} className={classes.textContainer}>
-					<Typography variant="h2" component="h1" className={clsx(classes.title, 'animate__animated animate__fadeInDown')}>
+					<Typography variant="h2" component="h2" className={clsx(classes.title, 'animate__animated animate__fadeInDown')}>
 						What I do
 					</Typography>
 				</Grid>
