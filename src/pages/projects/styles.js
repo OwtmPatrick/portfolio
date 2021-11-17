@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		[theme.breakpoints.up('md')]: {
 			boxSizing: 'border-box',
+			margin: '0 auto',
 			padding: '12px'
 		}
 	},

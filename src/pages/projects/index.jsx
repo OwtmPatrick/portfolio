@@ -21,13 +21,13 @@ export default () => {
 			</Typography>
 
 			<Grid lg={10} className={classes.projectsContainer}>
-				<Grid lg={8} className={classes.projectContainer}>
+				<Grid md={8} lg={8} className={classes.projectContainer}>
 					<Grid item className={clsx(classes.project, 'first')}>
 						<Project {...projects[0]} />
 					</Grid>
 				</Grid>
 
-				<Grid lg={4} className={classes.projectContainer}>
+				<Grid md={8} lg={4} className={classes.projectContainer}>
 					<Grid item className={clsx(classes.project, 'second')}>
 						<Project {...projects[1]} />
 					</Grid>
