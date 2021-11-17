@@ -2,7 +2,7 @@ import React from 'react';
 import {Grid, Typography} from '@material-ui/core';
 import clsx from 'clsx';
 import useStyles from './styles';
-import imageSrc from '../../assets/images/me.png';
+import imageSrc from '../../assets/images/me.jpg';
 
 export default () => {
 	const classes = useStyles();
