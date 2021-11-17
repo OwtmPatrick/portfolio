@@ -153,7 +153,8 @@ export default () => {
 									variant="outlined"
 									fullWidth
 									type="submit"
-									className={clsx(classes.button)}
+									className={classes.button}
+									disabled={!formik.values.firstName || !formik.values.lastName || !formik.values.message}
 								>
 									Send
 								</Button>
