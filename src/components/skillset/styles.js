@@ -8,6 +8,8 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	container: {
+		alignItems: 'center',
+		justifyContent: 'center',
 		margin: 0,
 
 		[theme.breakpoints.up('lg')]: {
