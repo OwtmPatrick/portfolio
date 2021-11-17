@@ -2,6 +2,7 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import useStyles from './styles';
 import icons from './icons';
 
@@ -25,12 +26,12 @@ const Project = ({
 					</div>
 
 					<div className={classes.linksWrapper}>
-						<a href={github} className={classes.link}>
-							Github
-						</a>
-
 						<a href={demo} className={clsx(classes.link, classes.demo)}>
 							Demo
+						</a>
+
+						<a href={github} className={clsx(classes.link, classes.github)}>
+							<FontAwesomeIcon icon={faGithub} className={classes.githubIcon}/>
 						</a>
 					</div>
 				</div>

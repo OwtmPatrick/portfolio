@@ -47,6 +47,7 @@ const useStyles = makeStyles(theme => ({
 		opacity: 0
 	},
 	info: {
+		width: '40%',
 		overflow: 'hidden',
 		color: theme.palette.common.white
 	},
@@ -90,7 +91,18 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	demo: {
-		marginLeft: '24px'
+		marginRight: '16px'
+	},
+	github: {
+		borderRadius: '50%',
+		padding: '8px 10px',
+		'&:hover': {
+			borderRadius: 0,
+			padding: '8px 16px'
+		}
+	},
+	githubIcon: {
+		fontSize: '22px'
 	}
 }));
 
