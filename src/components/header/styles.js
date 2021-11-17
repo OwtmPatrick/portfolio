@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 		color: 'white',
 		letterSpacing: '1px',
 		transition: '.2s',
+		fontWeight: 600,
 
 		'.header-white &': {
 			color: theme.palette.common.black,
