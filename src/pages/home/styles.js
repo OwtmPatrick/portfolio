@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	intro: {
+		marginBottom: '70px',
 		fontFamily: "'Mulish', sans-serif",
 		color: theme.palette.common.white,
 		fontSize: 48,
@@ -50,8 +51,6 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
 	text: {
-		marginTop: 20,
-		marginBottom: 60,
 		fontSize: 22,
 		fontWeight: 300,
 		fontFamily: "'Mulish', sans-serif",
@@ -59,6 +58,18 @@ const useStyles = makeStyles(theme => ({
 		[theme.breakpoints.up('md')]: {
 			textAlign: 'left'
 		}
+	},
+	name: {
+		margin: '5px 0',
+		fontSize: '40px',
+		fontWeight: 700,
+		color: theme.palette.common.white,
+		[theme.breakpoints.up('md')]: {
+			textAlign: 'left'
+		}
+	},
+	textBottom: {
+		marginBottom: 60
 	},
 	imgContainer: {
 		position: 'relative',

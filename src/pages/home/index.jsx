@@ -25,9 +25,25 @@ export default () => {
 						variant="body2"
 						component="p"
 						align="center"
-						className={clsx(classes.text)}
+						className={classes.text}
 					>
-						Hi, my name is Radik Zangirov and I am Javascript developer based at
+						Hi there, my name is
+					</Typography>
+
+					<Typography
+						component="p"
+						align="center"
+						className={classes.name}
+					>
+						Radik Zangirov
+					</Typography>
+
+					<Typography
+						component="p"
+						align="center"
+						className={clsx(classes.text, classes.textBottom)}
+					>
+						and I am Javascript developer based at
 						Chelyabinsk, Russia.
 					</Typography>
 				</Grid>
