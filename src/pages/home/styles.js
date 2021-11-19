@@ -30,8 +30,10 @@ const useStyles = makeStyles(theme => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		[theme.breakpoints.up('md')]: {
+			width: '100%',
 			flexDirection: 'row',
-			alignItems: 'flex-start'
+			alignItems: 'flex-start',
+			justifyContent: 'space-between'
 		}
 	},
 	textContainer: {
