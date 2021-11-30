@@ -26,12 +26,24 @@ const Project = ({
 					</div>
 
 					<div className={classes.linksWrapper}>
-						<a href={demo} className={clsx(classes.link, classes.demo)}>
-							Demo
-						</a>
+						{demo && (
+							<a
+								href={demo}
+								className={clsx(classes.link, classes.demo)}
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								Demo
+							</a>
+						)}
 
-						<a href={github} className={clsx(classes.link, classes.github)}>
-							<FontAwesomeIcon icon={faGithub} className={classes.githubIcon}/>
+						<a
+							href={github}
+							className={clsx(classes.link, classes.github)}
+							target="_blank"
+							rel="noreferrer noopener"
+						>
+							<FontAwesomeIcon icon={faGithub} className={classes.githubIcon} />
 						</a>
 					</div>
 				</div>
