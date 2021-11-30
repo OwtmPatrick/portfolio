@@ -1,6 +1,7 @@
 import calc from '../../assets/images/calc.jpg';
 import catAndPerson from '../../assets/images/cat-and-person.jpg';
 import science from '../../assets/images/science.jpg';
+import blockchain from '../../assets/images/blockchain.jpg';
 
 export default [
 	{
@@ -23,5 +24,11 @@ export default [
 		github: 'https://github.com/OwtmPatrick/science',
 		demo: 'https://owtmpatrick.github.io/science/',
 		technoloigies: [{name: 'react', type: 'fontAwesome'}, {name: 'redux', type: 'custom'}]
+	},
+	{
+		img: blockchain,
+		title: 'Blockchain based todo app',
+		github: 'https://github.com/OwtmPatrick/react-todo-eth',
+		technoloigies: [{name: 'typescript', type: 'custom'}, {name: 'react', type: 'fontAwesome'}]
 	}
 ];

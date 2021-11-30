@@ -36,6 +36,12 @@ export default () => {
 						<Project {...projects[2]} />
 					</Grid>
 				</Grid>
+
+				<Grid md={8} lg={8} className={classes.projectContainer}>
+					<Grid item className={clsx(classes.project, 'first')}>
+						<Project {...projects[3]} />
+					</Grid>
+				</Grid>
 			</Grid>
 		</Grid>
 	);
