@@ -3775,6 +3775,9 @@ img.u-pull-left {
 }
 
 .modal-popup img {
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
     margin-bottom : var(--vspace-0_75);
 }
 
