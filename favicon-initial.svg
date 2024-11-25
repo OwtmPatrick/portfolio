@@ -1,0 +1,6 @@
+<svg id="awesome-text" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 50 50">
+    <rect width="50" height="50" fill="#000000"></rect>
+    <text x="6" y="33">
+        <tspan font-weight="bold" fill="#fff" font-size="24" font-family="Verdana">RZ</tspan>
+    </text>
+</svg>
